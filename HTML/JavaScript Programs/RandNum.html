@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Random Number Generator</title>
+    <style>
+        * {
+            font-family: Bookman Old Style, sans-serif;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            position: absolute;
+            width: 30%;   
+            top: 50%; 
+            right: 20%;
+            transform: translate(-50%, -50%);
+            padding: 20px 30px;
+            border: 1px solid #3cd;
+            border-radius: 5px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input {
+            width: 100%;
+            margin: 20px 0px;
+            padding: 8px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type=button] {
+            cursor: pointer;
+            background-color:lavender;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Random Number Generator</h1>
+    <div class="container">
+        <label>Start</label>
+        <input id="low" type="text" placeholder="Start">
+        <label>End</label>
+        <input id="high" type="text" placeholder="End">
+        <input id="btn" type="button" value="Generate">
+        <p id="randnum"></p>
+        <script>
+            const btn = document.getElementById("btn");
+            const RandNum = document.getElementById("randnum");
+
+            const high = document.getElementById("low");
+            const low = document.getElementById("high");
+
+            btn.onclick = function () {
+
+                const min = Number(low.value);
+                const max = Number(high.value);
+
+                RandNum.innerHTML = Math.round(Math.random() * (max - min) + min,0);
+            }
+        </script>
+    </div>
+</body>
+
+</html>
