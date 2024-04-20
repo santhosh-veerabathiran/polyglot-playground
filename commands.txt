@@ -1,0 +1,40 @@
+1. Download package with npm: 
+    npm i <package>
+
+2. Check version of npm:
+    npm -v
+
+3. Check version of node:
+    node -v
+
+4. Download nest JS through npm (globally):
+    npm i -g @nestjs/cli
+
+5. Change Execution policy in powershell:
+    set -ExecutionPolicy RemoteSigned => Y
+
+6. Download typesense package through npm:
+    npm i typesense
+
+7. Create new microservice:
+    nx g @nrwl/nest:app <service_name>
+
+8. Start microservice:
+    nx s <service_name>
+
+9. Start nest JS project: 
+    npm run start, npm run start:dev
+
+10. Run typesense server within docker
+    docker run -p 8108:8108 -v /typesense-data:/data typesense/typesense:0.26.0.rc64 --data-dir=/data --api-key=xyz --enable-cors
+    docker run -p 8108:8108 -v /typesense-data:/data typesense/typesense:26.0 --data-dir=/data --api-key=xyz --enable-cors
+
+11. Download typesense-server to docker
+    docker pull typesense/typesense:0.26.0.rc64
+    docker pull typesense/typesense:26.0
+
+12. Download meilisearch-server to docker
+    docker pull getmeili/meilisearch:v1.7.3
+
+13. Run meilisearch-server within docker
+    docker run -p 7700:7700 getmeili/meilisearch:v1.7.3
