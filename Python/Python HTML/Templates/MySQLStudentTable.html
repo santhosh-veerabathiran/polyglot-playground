@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-CA-Compatible" content="IE-edge"/>
+        <meta name="viewport" content="width=device-width,intial_scale=1.0"/>
+        <title>Student Table</title>
+        <link rel="stylesheet" href="MySQLStudentTable.css">
+    </head>
+
+    <body>
+        <div class="Title">
+            <h1>Student Table</h1>
+        </div>
+        <div class="Student">
+            <div class="StuID">
+                <label>ID:</label>
+                <input type="text" id="StuID" name="StuID"/>
+            </div>
+            <div class="StuName">
+                <label>Name:</label>
+                <input type="text" id="StuName" name="StuName"/>
+            </div>
+            <div class="Gender">
+                <label>Gender:</label>
+                <input type="radio" id="Male" name="Gender">Male</input>
+                <input type="radio" id="Female" name="Gender">Female</input>
+            </div>
+            <div class="Age">
+                <label>Age:</label>
+                <input type="text" id="Age" name="Age"/>
+            </div>
+        </div>
+        <div class="Operations">
+            <button onclick="alert('Inserted')">Insert</button>
+            <button onclick="alert('Updated')">Update</button>
+            <button onclick="alert('Deleted')">Delete</button>
+            <button onclick="alert('Selected')">Select</button>
+        </div>
+
+    </body>
+</html>
