@@ -6,8 +6,8 @@ import { TypesenseModule } from './typesense/typesense.module';
 @Module({
   imports: [
     // UserModule,
-    TypesenseModule,
-    // TypeormModule
+    // TypesenseModule,
+    TypeormModule
   ],
 })
 export class AppModule { }
