@@ -68,16 +68,16 @@ async function update() {
             ],
         }
     ),
-    {
-        depth: null,
-    });
+        {
+            depth: null,
+        });
 }
 
 async function drop() {
     try {
         console.dir(await client.collections('books').delete());
     }
-    catch(e) {
+    catch (e) {
         console.log(e.message);
     }
 }
