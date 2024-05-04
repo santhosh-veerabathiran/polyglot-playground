@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { frameResponse } from './response/frame-response';
-
+import { frameResponse } from './utils';
+import { validateUser, logger, validateId } from './utils';
 @Injectable()
 export class UserService {
-
   private users = [
     {
       id: 101,
@@ -21,22 +20,25 @@ export class UserService {
     try {
       const users = this.users;
       if (!users) throw new Error('Users not found');
+      logger.log(`Fetched users: ${JSON.stringify(users, null, 2)}`);
       return frameResponse('Success', 'Users fetched successfully', users);
     }
     catch (e) {
-      console.log(`Error occurred in getUsers with message: ${e.message}`);
+      logger.error(`Error occurred in getUsers with message: ${e.message}`);
       return frameResponse('Error', e.message);
     }
   }
 
   getUser(id: number) {
     try {
+      id = validateId(id);
       const user = this.users.find(user => user.id == id);
       if (!user) throw new Error('User not found');
+      logger.log(`Fetched User: ${JSON.stringify(user, null, 2)}`);
       return frameResponse('Success', 'User fetched successfully', user);
     }
     catch (e) {
-      console.log(`Error occurred in getUser with message: ${e.message}`);
+      logger.error(`Error occurred in getUser with message: ${e.message}`);
       return frameResponse('Error', e.message);
     }
   }
@@ -48,18 +50,17 @@ export class UserService {
       email: string
     }[]
   ) {
-    const createdUsers = users.map(user => {
-      try {
-        if (this.users.find(u => u.id == user.id)) throw new Error(`User '${user.id}' already exists`)
-        this.users.push(user);
-        return frameResponse('Success', `User '${user.id}' added successfully`);
-      }
-      catch (e) {
-        console.log(`Error occurred in createUser with message: ${e.message}`);
-        return frameResponse('Error', e.message);
-      }
-    });
-    return frameResponse('Success', 'Users created successfully', createdUsers);
+    try {
+      if (Object.entries(users).length == 0) throw new Error('Required data not found');
+      const createdUsers = users.map(user => {
+        return this.createUser(user);
+      });
+      return frameResponse('Success', 'Users created successfully', createdUsers);
+    }
+    catch (e) {
+      logger.error(`Error occurred in createUser with message: ${e.message}`);
+      return frameResponse('Error', e.message);
+    }
   }
 
   createUser(user: {
@@ -68,12 +69,15 @@ export class UserService {
     email: string
   }) {
     try {
+      user = validateUser(user);
       if (this.users.find(u => u.id == user.id)) throw new Error(`User '${user.id}' already exists`);
       this.users.push(user);
-      return frameResponse('Success', `User '${user.id}' added successfully`);
+      const msg = `User '${user.id}' added successfully`;
+      logger.log(msg);
+      return frameResponse('Success', msg);
     }
     catch (e) {
-      console.log(`Error occurred in createUser with message: ${e.message}`);
+      logger.error(`Error occurred in createUser with message: ${e.message}`);
       return frameResponse('Error', e.message);
     }
   }

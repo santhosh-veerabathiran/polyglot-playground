@@ -1,6 +1,6 @@
 export function frameResponse(
     status: 'Error' | 'Success',
-    message?: string,
+    message: string,
     data?: any
 ) {
     return {

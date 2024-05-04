@@ -30,6 +30,6 @@ export const moviesSchema: CollectionCreateSchema = {
     ],
     default_sorting_field: 'popularity',
     symbols_to_index: [],
-    enable_nested_fields: false,
-    token_separators: [],    
+    enable_nested_fields: true,
+    token_separators: [],
 }
