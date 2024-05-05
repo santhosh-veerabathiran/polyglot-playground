@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Flask Form Example</title>
+    <style>
+        * {
+            font-family: Bookman Old Style;
+            font-style: italic;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin: 30px auto;
+            width: 50%;
+            padding: 20px 30px;
+            border: 1.5px solid lightblue;
+            border-radius: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin: 10px 0px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin: 10px 0px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        p {
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Passing Value Between HTML Pages</h1>
+
+    <form action="/next" method="POST">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" placeholder="Enter Your First Name">
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" placeholder="Enter Your Last Name">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter Your Email">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if name,email %}
+    <p>
+        Hello {{name}}<br>
+        Your email ID is {{email}}
+    </p>
+    {% endif %}
+</body>
+
+</html>

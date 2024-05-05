@@ -1,0 +1,13 @@
+body{
+    background-color: floralwhite;
+    font-family: Book Antiqua;
+    font-size: larger;
+    text-align: center;
+}
+
+.Student{
+    background-color: aqua;
+    border: 2px solid royalblue;
+    width: 400px;
+    height: 200px;
+}
