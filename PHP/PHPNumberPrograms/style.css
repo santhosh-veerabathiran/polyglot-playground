@@ -1,0 +1,35 @@
+* {
+    font-family: Bookman Old Style;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 40%;
+    margin: 50px auto;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 20px 30px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    outline: none;
+    font-size: 18px;
+}
+
+input[type=submit] {
+    background-color: lightgreen;
+}
+
+p {
+    font-size: 30px;
+    text-align: center;
+}
