@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
 import { DatabaseService } from './database.service';
 import { User } from './interfaces/user.interface';
 import { logger } from './utils';
@@ -15,7 +15,7 @@ export class DatabaseController {
     }
 
     @Get(":id")
-    getUser(@Param('id', ParseIntPipe) id: number) {
+    getUser(@Param('id') id: number) {
         logger.log(`fetchUser called with id: ${id}`);
         return this.databaseService.getUser(id);
     }
@@ -30,5 +30,20 @@ export class DatabaseController {
     createUser(@Body() user: User) {
         logger.log(`createUsers called with data: ${JSON.stringify(user, null, 2)}`);
         return this.databaseService.createUser(user);
+    }
+
+    @Patch(':id')
+    updateUser(
+        @Param('id', ParseIntPipe) id: number,
+        @Body() user: User
+    ) {
+        logger.log(`updateUser called with id: ${id} and data: ${JSON.stringify(user, null, 2)}`);
+        return this.databaseService.updateUser(id, user);
+    }
+
+    @Delete(':id')
+    removeUser(@Param('id', ParseIntPipe) id: number) {
+        logger.log(`removeUser called with data: ${id}`);
+        return this.databaseService.removeUser(id);
     }
 }
