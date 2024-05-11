@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Database, validateUser } from './utils';
 import { database } from './utils';
-import { databaseConfig } from './environments.ts/environment';
+import { mysqlConfig } from './environments.ts/environment';
 import { frameResponse } from './utils';
 import { User } from './interfaces/user.interface';
 import { logger, validateId } from './utils';
@@ -16,7 +16,7 @@ export class DatabaseService {
 
     async initialize() {
         this.database = database();
-        await this.database.createConnection(databaseConfig);
+        await this.database.createConnection(mysqlConfig);
         await this.createUserTable();
     }
 
