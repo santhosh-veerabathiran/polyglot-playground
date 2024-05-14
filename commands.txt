@@ -38,3 +38,9 @@
 
 13. Run meilisearch-server within docker
     docker run -p 7700:7700 getmeili/meilisearch:v1.7.3
+
+14. Run meilisearch-server in docker (Docker Command):
+    docker run --hostname=350f047e53ef --mac-address=02:42:ac:11:00:02 --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=MEILI_HTTP_ADDR=0.0.0.0:7700 --env=MEILI_SERVER_PROVIDER=docker --workdir=/meili_data -p 7700:7700 --restart=no --runtime=runc -d getmeili/meilisearch:v1.7.3
+
+15. Run monorepo apps in nestjs:
+    nest start <app-name> --watch
