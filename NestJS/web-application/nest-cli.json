@@ -45,6 +45,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/database/tsconfig.app.json"
       }
+    },
+    "fastify-app": {
+      "type": "application",
+      "root": "apps/fastify-app",
+      "entryFile": "main",
+      "sourceRoot": "apps/fastify-app/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/fastify-app/tsconfig.app.json"
+      }
     }
   }
 }
