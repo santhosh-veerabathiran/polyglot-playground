@@ -25,13 +25,11 @@
 9. Start nest JS project: 
     npm run start, npm run start:dev
 
-10. Run typesense server within docker
-    docker run -p 8108:8108 -v /typesense-data:/data typesense/typesense:0.26.0.rc64 --data-dir=/data --api-key=xyz --enable-cors
-    docker run -p 8108:8108 -v /typesense-data:/data typesense/typesense:26.0 --data-dir=/data --api-key=xyz --enable-cors
-
-11. Download typesense-server to docker
-    docker pull typesense/typesense:0.26.0.rc64
+10. Download typesense-server to docker
     docker pull typesense/typesense:26.0
+
+11. Run typesense server within docker
+    docker run -p 8108:8108 -v /typesense-data:/data typesense/typesense:26.0 --data-dir=/data --api-key=xyz --enable-cors
 
 12. Download meilisearch-server to docker
     docker pull getmeili/meilisearch:v1.7.3
@@ -39,8 +37,59 @@
 13. Run meilisearch-server within docker
     docker run -p 7700:7700 getmeili/meilisearch:v1.7.3
 
-14. Run meilisearch-server in docker (Docker Command):
-    docker run --hostname=350f047e53ef --mac-address=02:42:ac:11:00:02 --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=MEILI_HTTP_ADDR=0.0.0.0:7700 --env=MEILI_SERVER_PROVIDER=docker --workdir=/meili_data -p 7700:7700 --restart=no --runtime=runc -d getmeili/meilisearch:v1.7.3
-
-15. Run monorepo apps in nestjs:
+14. Run monorepo apps in nestjs:
     nest start <app-name> --watch
+
+15. To initialize new Git repository in the current directory:
+    git init 
+
+16. To cloning existing repository from Git to Local:
+    git clone {url}
+
+17. To add files to staging area for next commit:
+    git add <file_name> or . => for all files
+
+18. To commit changes with message from staging area:
+    git commit -m "commit_message"
+
+19. To display the status of working directory and staging area:
+    git status
+
+20. To show the difference between working directory and staging area:
+    git diff
+
+21. To fetch changes from remote repository's main branch and merges them to current branch:
+    git pull origin main
+
+22. To push the committed changes from local main to remote repository's main:
+    git push origin main
+
+23. To list all local branches:
+    git branch
+
+24. To create new branch and switch to it:
+    git checkout -b <branch-name>
+
+25. To merge changes from one_branch to current_branch:
+    git merge one_branch
+
+26. For Reapplies commits from the current branch on top of the main branch:
+    git rebase main
+
+27. To display history of commits in the repository:
+    git log
+
+28. To lists all the remote repositories associated with the current repository along with their URLs:
+    git remote -v
+
+29. For temporarily shelves changes that are not ready to be committed:
+    git stash save "Work in progress"
+
+30. To Create a lightweight tag named v1.0 at the current commit:
+    git tag v1.0
+
+31. To Download objects and refs from the remote repository named origin:
+    git fetch origin
+
+32. To set the global configuration value for the user's name: 
+    git config --global user.name "Santhosh_Veerabathiran"
