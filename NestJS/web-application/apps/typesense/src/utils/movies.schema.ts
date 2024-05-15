@@ -12,23 +12,19 @@ export const moviesSchema: CollectionCreateSchema = {
             type: 'string',
         },
         {
-            name: 'popularity',
-            type: 'float',
+            name: 'genres',
+            type: 'string[]',
+        },
+        {
+            name: 'poster',
+            type: 'string',
         },
         {
             name: 'release_date',
-            type: 'string',
+            type: 'int64',
         },
-        {
-            name: 'poster_path',
-            type: 'string',
-        },
-        {
-            name: 'genres',
-            type: 'string[]',
-        }
     ],
-    default_sorting_field: 'popularity',
+    default_sorting_field: 'release_date',
     symbols_to_index: [],
     enable_nested_fields: true,
     token_separators: [],

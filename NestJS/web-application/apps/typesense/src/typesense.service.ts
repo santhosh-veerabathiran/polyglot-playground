@@ -23,7 +23,7 @@ export class TypesenseService {
             logger.log(`Creating ${schema.name} collection with schema: ${JSON.stringify(schema, null, 2)}`)
             this.typesenseClient.collections().create(schema)
                 .then((value) => {
-                    logger.log(`${schema.name} collection created successfully`);
+                    logger.log(`${schema.name} collection created successfully with response: ${JSON.stringify(value, null, 2)}`);
                 })
                 .catch((e) => {
                     logger.error(`Could not create ${schema.name} collection error occurred with message: ${e.message}`);
@@ -45,6 +45,26 @@ export class TypesenseService {
         }
         catch (e) {
             logger.error(`Error occurred in addMovieDocument with message: ${e.message}`);
+            return frameResponse('Error', e.message);
+        }
+    }
+
+    async importMovieDocuments(
+        moviesData: Array<Movie>
+    ) {
+        try {
+            const importResult = await this.typesenseClient.collections(moviesSchema.name).documents().import(moviesData, {
+                action: 'upsert'
+            });
+            logger.log(`document added to ${moviesSchema.name} collection successfully with response: ${JSON.stringify(importResult, null, 2)}`);
+            return frameResponse(
+                'Success',
+                `documents added to ${moviesSchema.name} collection successfully`,
+                importResult,
+            );
+        }
+        catch (e) {
+            logger.error(`Error occurred in importMovieDocuments with message: ${e.message}`);
             return frameResponse('Error', e.message);
         }
     }
