@@ -1,95 +1,125 @@
-1. Download package with npm: 
-    npm i <package>
+1. npm commands: 
 
-2. Check version of npm:
-    npm -v
+    i. Check version of npm:
+        npm -v
 
-3. Check version of node:
-    node -v
+    ii. Download node package with npm: 
+        npm i <package>
 
-4. Download nest JS through npm (globally):
-    npm i -g @nestjs/cli
+2. node commands:
 
-5. Change Execution policy in powershell:
-    set -ExecutionPolicy RemoteSigned => Y
+    i. Check version of node:
+        node -v
 
-6. Download typesense package through npm:
-    npm i typesense
+    ii. Run node file:
+        node <filename>
 
-7. Create new microservice:
-    nx g @nrwl/nest:app <service_name>
+3. nest JS commands:
 
-8. Start microservice:
-    nx s <service_name>
+    i. Download nest JS through npm (globally):
+        npm i -g @nestjs/cli
 
-9. Start nest JS project: 
-    npm run start, npm run start:dev
+    ii. Check version of nest:
+        nest -v
 
-10. Download typesense-server to docker
-    docker pull typesense/typesense:26.0
+    iii. Start nest JS project:
+        npm run start,
+        nest start,
+        nest start <app-name>
 
-11. Run typesense server within docker
-    docker run -p 8108:8108 -v /typesense-data:/data typesense/typesense:26.0 --data-dir=/data --api-key=xyz --enable-cors
+    iv. Start nest JS project in development mode:
+        npm run start:dev,
+        nest start --watch
+        nest start <app-name> --watch
 
-12. Download meilisearch-server to docker
-    docker pull getmeili/meilisearch:v1.7.3
+4. nx commands:
 
-13. Run meilisearch-server within docker
-    docker run -p 7700:7700 getmeili/meilisearch:v1.7.3
+    i. Create new microservice:
+        nx g @nrwl/nest:app <service_name>
 
-14. Run monorepo apps in nestjs:
-    nest start <app-name> --watch
+    ii. Start microservice:
+        nx s <service_name>
 
-15. To initialize new Git repository in the current directory:
-    git init 
+5. typesense commands:
 
-16. To cloning existing repository from Git to Local:
-    git clone {url}
+    i. Download typesense-server within docker:
+        docker pull typesense/typesense:26.0
 
-17. To add files to staging area for next commit:
-    git add <file_name> or . => for all files
+    ii. Run typesense server within docker
+        docker run -p 8108:8108 -v /typesense-data:/data typesense/typesense:26.0 --data-dir=/data --api-key=xyz --enable-cors
 
-18. To commit changes with message from staging area:
-    git commit -m "commit_message"
+    iii. Download typesense package using npm:
+        npm i typesense
 
-19. To display the status of working directory and staging area:
-    git status
+6. meilisearch commands: 
 
-20. To show the difference between working directory and staging area:
-    git diff
+    i. Download meilisearch-server to docker
+        docker pull getmeili/meilisearch:v1.7.3
 
-21. To fetch changes from remote repository's main branch and merges them to current branch:
-    git pull origin main
+    ii. Run meilisearch-server within docker
+        docker run -it --rm -p 7700:7700 -e MEILI_MASTER_KEY='xyz' getmeili/meilisearch:v1.7.3
 
-22. To push the committed changes from local main to remote repository's main:
-    git push origin main
+    iii. Download meilisearch package using npm:
+        npm i meili
+    
+7. git commands:
 
-23. To list all local branches:
-    git branch
+    i . Initialize new Git repository in the current directory:
+        git init
 
-24. To create new branch and switch to it:
-    git checkout -b <branch-name>
+    ii. Cloning existing repository from Git to Local:
+        git clone {url}
 
-25. To merge changes from one_branch to current_branch:
-    git merge one_branch
+    iii. Add files to staging area for next commit:
+        git add <file_name>,
+        git add . (for all files)
 
-26. For Reapplies commits from the current branch on top of the main branch:
-    git rebase main
+    iv. Commit changes with message from staging area:
+        git commit -m "commit_message"
 
-27. To display history of commits in the repository:
-    git log
+    v. Display the status of working directory and staging area:
+        git status
 
-28. To lists all the remote repositories associated with the current repository along with their URLs:
-    git remote -v
+    vi. Show the difference between working directory and staging area:
+        git diff
 
-29. For temporarily shelves changes that are not ready to be committed:
-    git stash save "Work in progress"
+    vii. Fetch changes from remote repository's main branch and merges them to current branch:
+        git pull origin main
 
-30. To Create a lightweight tag named v1.0 at the current commit:
-    git tag v1.0
+    viii. Push the committed changes from local main to remote repository's main:
+        git push origin main
 
-31. To Download objects and refs from the remote repository named origin:
-    git fetch origin
+    ix. List all local branches:
+        git branch
 
-32. To set the global configuration value for the user's name: 
-    git config --global user.name "Santhosh_Veerabathiran"
+    x. Create new branch and switch to it:
+        git checkout -b <branch-name>
+
+    xi. To merge changes from one_branch to current_branch:
+        git merge <one_branch>
+
+    xii. Reapplies commits from the current branch on top of the main branch:
+        git rebase main
+
+    xiii. Display history of commits in the repository:
+        git log
+
+    xiv. Lists all the remote repositories associated with the current repository along with their URLs:
+        git remote -v
+
+    xv. Temporarily shelves changes that are not ready to be committed:
+        git stash save "Work in progress"
+
+    xvi. Create a lightweight tag named v1.0 at the current commit:
+        git tag v1.0
+
+    xvii. Download objects and refs from the remote repository named origin:
+        git fetch origin
+
+    xviii. To set the global configuration value for the user's name: 
+        git config --global user.name "Santhosh_Veerabathiran"
+
+8. powershell commands:
+
+    i. Change Execution policy in powershell:
+        set -ExecutionPolicy RemoteSigned => Y
