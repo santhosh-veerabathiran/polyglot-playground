@@ -40,29 +40,44 @@
     ii. Start microservice:
         nx s <service_name>
 
-5. typesense commands:
+5. express commands:
+
+    i. Install express-generator using npm (globally):
+        npm i -g express-generator
+
+    ii. Check express version:
+        express --version
+
+    iii. Create new express app:
+        express --view=pug web-application
+    
+    iv. Run express app:
+        SET DEBUG=<app_name>:*,
+        npm start
+
+6. typesense commands:
 
     i. Download typesense-server within docker:
         docker pull typesense/typesense:26.0
 
     ii. Run typesense server within docker
-        docker run -p 8108:8108 -v /typesense-data:/data typesense/typesense:26.0 --data-dir=/data --api-key=xyz --enable-cors
+        docker run -p 8108:8108 -v"$(pwd)"/typesense-data:/data typesense/typesense:26.0 --data-dir=/data --api-key=xyz --enable-cors
 
     iii. Download typesense package using npm:
         npm i typesense
 
-6. meilisearch commands: 
+7. meilisearch commands: 
 
     i. Download meilisearch-server to docker
         docker pull getmeili/meilisearch:v1.7.3
 
     ii. Run meilisearch-server within docker
-        docker run -it --rm -p 7700:7700 -e MEILI_MASTER_KEY='xyz' getmeili/meilisearch:v1.7.3
+        docker run -it --rm -p 7700:7700 -v"$(pwd)"\meili-data:/meili_data -e MEILI_MASTER_KEY='xyz' getmeili/meilisearch:v1.7.3
 
     iii. Download meilisearch package using npm:
         npm i meili
     
-7. git commands:
+8. git commands:
 
     i . Initialize new Git repository in the current directory:
         git init
@@ -119,7 +134,7 @@
     xviii. To set the global configuration value for the user's name: 
         git config --global user.name "Santhosh_Veerabathiran"
 
-8. powershell commands:
+9. powershell commands:
 
     i. Change Execution policy in powershell:
         set -ExecutionPolicy RemoteSigned => Y
