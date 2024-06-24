@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Database, validateUser } from './utils';
 import { database } from './utils';
-import { mysqlConfig } from './environments.ts/environment';
+import { mysqlConfig } from './environments/environment';
 import { frameResponse } from './utils';
 import { User } from './interfaces/user.interface';
 import { logger, validateId } from './utils';

@@ -12,4 +12,6 @@ iii. Start nest JS project:
 iv. Start nest JS project in development mode:
     npm run start:dev,
     nest start --watch
+
+v. Start nest JS mono-repo project in development mode:
     nest start <app-name> --watch

@@ -1,21 +1,7 @@
-import { ConfigurationOptions } from "typesense/lib/Typesense/Configuration";
+import { DataSource, DataSourceOptions } from "typeorm";
 import * as env from "dotenv";
 
 env.config();
-
-export const typesenseConfig: ConfigurationOptions = {
-    nodes: [
-        {
-            host: process.env.TYPESENSE_HOST,
-            port: parseInt(process.env.TYPESENSE_PORT),
-            protocol: process.env.TYPESENSE_PROTOCOL
-        }
-    ],
-    apiKey: process.env.TYPESENSE_API_KEY,
-    connectionTimeoutSeconds: parseInt(process.env.TYPESENSE_TIMEOUT_SECONDS)
-} as const
-
-import { DataSource, DataSourceOptions } from "typeorm";
 
 export const mysqlConfig: DataSourceOptions = {
     type: 'mysql',
