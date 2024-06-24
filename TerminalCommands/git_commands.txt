@@ -1,0 +1,58 @@
+i . Initialize new Git repository in the current directory:
+    git init
+
+ii. Cloning existing repository from Git to Local:
+    git clone {url}
+
+iii. Add files to staging area for next commit:
+    git add <file_name>,
+    git add . (for all files)
+
+iv. Commit changes with message from staging area:
+    git commit -m "commit_message"
+
+v. Display the status of working directory and staging area:
+    git status
+
+vi. Show the difference between working directory and staging area:
+    git diff
+
+vii. Fetch changes from remote repository's main branch and merges them to current branch:
+    git pull origin main
+
+viii. Push the committed changes from local main to remote repository's main:
+    git push origin main
+
+ix. List all local branches:
+    git branch
+
+x. Create new branch and switch to it:
+    git checkout -b <branch-name>
+
+xi. To merge changes from one_branch to current_branch:
+    git merge <one_branch>
+
+xii. Reapplies commits from the current branch on top of the main branch:
+    git rebase main
+
+xiii. Display history of commits in the repository:
+    git log
+
+xiv. Lists all the remote repositories associated with the current repository along with their URLs:
+    git remote -v
+
+xv. Temporarily shelves changes that are not ready to be committed:
+    git stash save "Work in progress"
+
+xvi. Create a lightweight tag named v1.0 at the current commit:
+    git tag v1.0
+
+xvii. Download objects and refs from the remote repository named origin:
+    git fetch origin
+
+xviii. To set the global configuration value for the user's name and email: 
+    git config --global user.name "Santhosh_Veerabathiran"
+    git config --global user.email "santhosh20020923@gmail.com"
+    git config --global --get user.name
+    git config --local user.name "Santhosh V"
+    git config --local --get user.name

@@ -1,0 +1,5 @@
+i. Check version of npm:
+    npm -v
+
+ii. Download node package with npm: 
+    npm i <package>

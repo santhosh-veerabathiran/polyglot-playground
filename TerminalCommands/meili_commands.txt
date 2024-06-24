@@ -1,0 +1,8 @@
+i. Download meilisearch-server to docker
+    docker pull getmeili/meilisearch:v1.7.3
+
+ii. Run meilisearch-server within docker
+    docker run -it --rm -p 7700:7700 -v"$(pwd)"\meili-data:/meili_data -e MEILI_MASTER_KEY='xyz' getmeili/meilisearch:v1.7.3
+
+iii. Download meilisearch package using npm:
+    npm i meili

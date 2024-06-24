@@ -1,0 +1,2 @@
+i. Change Execution policy in powershell:
+    set -ExecutionPolicy RemoteSigned => Y

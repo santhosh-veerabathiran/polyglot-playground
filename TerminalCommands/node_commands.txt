@@ -1,0 +1,5 @@
+i. Check version of node:
+    node -v
+
+ii. Run node file:
+    node <filename>

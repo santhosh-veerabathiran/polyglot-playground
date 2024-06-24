@@ -1,0 +1,5 @@
+i. Create new microservice:
+    nx g @nrwl/nest:app <service_name>
+
+ii. Start microservice:
+    nx s <service_name>

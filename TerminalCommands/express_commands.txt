@@ -1,0 +1,12 @@
+i. Install express-generator using npm (globally):
+    npm i -g express-generator
+
+ii. Check express version:
+    express --version
+
+iii. Create new express app:
+    express --view=pug web-application
+
+iv. Run express app:
+    SET DEBUG=<app_name>:*,
+    npm start
