@@ -26,13 +26,13 @@ async function addOrReplace() {
 
 async function indexJson() {
     try {
-        const books = require("../datasets/books.json");
-        console.log(await client.index('books').addDocuments(books));
+        const movies = require("../datasets/movies.json");
+        console.log(await client.index('movies').addDocuments(movies));
     }
-    catch(e) {
+    catch (e) {
         console.log(e.message)
     }
-} 
+}
 
 async function addOrUpdate() {
     try {
@@ -63,7 +63,7 @@ async function deleteD() {
 async function deleteDs() {
     try {
         console.log(await client.index('movies').deleteDocuments(
-            { filter: 'genres = action OR genres = adventure'}
+            { filter: 'genres = action OR genres = adventure' }
         ));
 
         // console.log(await client.index('movies').deleteDocuments([1,5,10]));
@@ -105,7 +105,7 @@ async function getAll() {
 }
 
 // addOrReplace();
-// indexJson();
+indexJson();
 // addOrUpdate();
 // deleteD();
 // deleteDs();
