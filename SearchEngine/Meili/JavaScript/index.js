@@ -103,6 +103,6 @@ async function getAllRaw() {
 // deleteIIfExist();
 // swap();
 // get();
-getAll();
+// getAll();
 // getRaw();
 // getAllRaw();
