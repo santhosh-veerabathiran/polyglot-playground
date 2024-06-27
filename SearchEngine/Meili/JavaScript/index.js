@@ -70,7 +70,9 @@ async function get() {
 
 async function getAll() {
     try {
-        console.log(await client.getIndexes());
+        console.dir(await client.getIndexes(), {
+            depth: null
+        });
     }
     catch (e) {
         console.log(e.message);
@@ -101,6 +103,6 @@ async function getAllRaw() {
 // deleteIIfExist();
 // swap();
 // get();
-// getAll();
+getAll();
 // getRaw();
 // getAllRaw();
