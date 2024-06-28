@@ -10,8 +10,8 @@ export const mysqlConfig: DataSourceOptions = {
     username: process.env.MYSQL_USERNAME,
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DB_NAME,
-    synchronize: false
-} as const
+    synchronize: true
+} as const;
 
 export const postgreConfig: DataSourceOptions = {
     type: 'postgres',
@@ -20,17 +20,24 @@ export const postgreConfig: DataSourceOptions = {
     username: process.env.POSTGRES_USERNAME,
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DB_NAME,
-    synchronize: false
-} as const
+    synchronize: true
+} as const;
 
 export const environment = {
-    DatabaseConfig: {
+    mysqlDatabaseConfig: {
         provide: 'DATA_SOURCE',
         useFactory: async () => {
             const dataSource = new DataSource(mysqlConfig);
             return await dataSource.initialize();
         }
     },
+    postgreDatabaseConfig: {
+        provide: 'DATA_SOURCE',
+        useFactory: async () => {
+            const dataSource = new DataSource(postgreConfig);
+            return await dataSource.initialize();
+        }
+    },
     appHost: process.env.APP_HOST,
     appPort: parseInt(process.env.APP_PORT),
-} as const
+} as const;

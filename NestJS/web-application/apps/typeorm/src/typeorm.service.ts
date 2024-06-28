@@ -53,7 +53,9 @@ export class TypeormService {
   async createUser(user: UserInfo) {
     try {
       const createdUser = this.userRepository.create({ ...user, createdAt: new Date() });
+      console.log(createdUser);
       const savedUser = await this.userRepository.save(createdUser);
+      console.log(savedUser);
       logger.log('User created successfully');
       return frameResponse('Success', 'User created successfully', savedUser);
     }
