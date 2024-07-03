@@ -1,17 +1,17 @@
-i. Download nest JS through npm (globally):
+1. Download nest JS through npm (globally):
     npm i -g @nestjs/cli
 
-ii. Check version of nest:
+2. Check version of nest:
     nest -v
 
-iii. Start nest JS project:
+3. Start nest JS project:
     npm run start,
     nest start,
     nest start <app-name>
 
-iv. Start nest JS project in development mode:
+4. Start nest JS project in development mode:
     npm run start:dev,
     nest start --watch
 
-v. Start nest JS mono-repo project in development mode:
+5. Start nest JS mono-repo project in development mode:
     nest start <app-name> --watch

@@ -5,7 +5,7 @@ import { TypeormService } from './typeorm.service';
 import { Users } from './entities/Users';
 import { mysqlConfig } from './environments/environment';
 
-const databaseConfig = mysqlConfig;
+const databaseConfig = postgreConfig;
 @Module({
 	imports: [
 		TypeOrmModule.forRoot(databaseConfig),

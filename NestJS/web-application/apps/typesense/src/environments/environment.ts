@@ -13,7 +13,7 @@ export const typesenseConfig: ConfigurationOptions = {
     ],
     apiKey: process.env.TYPESENSE_API_KEY,
     connectionTimeoutSeconds: parseInt(process.env.TYPESENSE_TIMEOUT_SECONDS)
-} as const
+} as const;
 
 import { DataSource, DataSourceOptions } from "typeorm";
 
@@ -25,7 +25,7 @@ export const mysqlConfig: DataSourceOptions = {
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DB_NAME,
     synchronize: false
-} as const
+} as const;
 
 export const postgreConfig: DataSourceOptions = {
     type: 'postgres',
@@ -35,16 +35,23 @@ export const postgreConfig: DataSourceOptions = {
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DB_NAME,
     synchronize: false
-} as const
+} as const;
 
 export const environment = {
-    DatabaseConfig: {
+    mysqlDatabaseConfig: {
         provide: 'DATA_SOURCE',
         useFactory: async () => {
             const dataSource = new DataSource(mysqlConfig);
             return await dataSource.initialize();
         }
     },
+    postgreDatabaseConfig: {
+        provide: 'DATA_SOURCE',
+        useFactory: async () => {
+            const dataSource = new DataSource(postgreConfig);
+            return await dataSource.initialize();
+        }
+    },
     appHost: process.env.APP_HOST,
     appPort: parseInt(process.env.APP_PORT),
-} as const
+} as const;
