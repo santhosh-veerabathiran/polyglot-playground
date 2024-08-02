@@ -32,16 +32,12 @@ export class DatabaseService {
                 updatedAt datetime
             )`;
 
-			const createResult = await this.database
-				.getConnection()
-				.query(query);
+			const createResult = await this.database.getConnection().query(query);
 			logger.log(
 				`User table created successfully with response: ${JSON.stringify(createResult, null, 2)}`
 			);
 		} catch (e) {
-			logger.error(
-				`Error occurred in createUserTable with message: ${e.message}`
-			);
+			logger.error(`Error occurred in createUserTable with message: ${e.message}`);
 		}
 	}
 
@@ -49,20 +45,13 @@ export class DatabaseService {
 		try {
 			const query = `SELECT u.* FROM users u`;
 			const users = await this.database.getConnection().query(query);
-			if (Object.keys(users).length == 0)
-				throw new Error('users not found');
+			if (Object.keys(users).length == 0) throw new Error('users not found');
 			logger.log(
 				`Users fetched successfully with response: ${JSON.stringify(users, null, 2)}`
 			);
-			return frameResponse(
-				'Success',
-				`Users fetched successfully`,
-				users
-			);
+			return frameResponse('Success', `Users fetched successfully`, users);
 		} catch (e) {
-			logger.error(
-				`Error occurred in getUsers with message: ${e.message}`
-			);
+			logger.error(`Error occurred in getUsers with message: ${e.message}`);
 			return frameResponse('Error', e.message);
 		}
 	}
@@ -78,9 +67,7 @@ export class DatabaseService {
 			);
 			return frameResponse('Success', `User fetched successfully`, user);
 		} catch (e) {
-			logger.error(
-				`Error occurred in getUser with message: ${e.message}`
-			);
+			logger.error(`Error occurred in getUser with message: ${e.message}`);
 			return frameResponse('Error', e.message);
 		}
 	}
@@ -93,15 +80,9 @@ export class DatabaseService {
 			for (const user of users) {
 				createdUsers.push(await this.createUser(user));
 			}
-			return frameResponse(
-				'Success',
-				'users created successfully',
-				createdUsers
-			);
+			return frameResponse('Success', 'users created successfully', createdUsers);
 		} catch (e) {
-			logger.error(
-				`Error occurred in createUsers with message: ${e.message}`
-			);
+			logger.error(`Error occurred in createUsers with message: ${e.message}`);
 			return frameResponse('Error', e.message);
 		}
 	}
@@ -109,10 +90,7 @@ export class DatabaseService {
 	async createUser(user: TUsers) {
 		try {
 			user = validateUser(user);
-			const date = new Date()
-				.toISOString()
-				.slice(0, 19)
-				.replace('T', ' ');
+			const date = new Date().toISOString().slice(0, 19).replace('T', ' ');
 			const query = `INSERT INTO users 
                 (
                     fname, lname, email, phone_no, created_at, updated_at
@@ -129,9 +107,7 @@ export class DatabaseService {
 				id: result.insertId,
 			});
 		} catch (e) {
-			logger.error(
-				`Error occurred in createUser with message: ${e.message}`
-			);
+			logger.error(`Error occurred in createUser with message: ${e.message}`);
 			return frameResponse('Error', e.message);
 		}
 	}
@@ -140,10 +116,7 @@ export class DatabaseService {
 		try {
 			if (!user.fname && !user.lname && !user.email && !user.phone_no)
 				throw new Error('Required data not found');
-			const date = new Date()
-				.toISOString()
-				.slice(0, 19)
-				.replace('T', ' ');
+			const date = new Date().toISOString().slice(0, 19).replace('T', ' ');
 			const query = `UPDATE users u SET
                 ${user.fname ? `fname = '${user.fname}'` : ''},
                 ${user.lname ? `lname = '${user.lname}'` : ''},
@@ -153,19 +126,14 @@ export class DatabaseService {
                 WHERE
                 u.user_id = ${id}
             `;
-			const updateResult = await this.database
-				.getConnection()
-				.query(query);
-			if (!updateResult['affectedRows'])
-				throw new Error('Could not update user');
+			const updateResult = await this.database.getConnection().query(query);
+			if (!updateResult['affectedRows']) throw new Error('Could not update user');
 			logger.log(
 				`User updated successfully with response: ${JSON.stringify(updateResult, null, 2)}`
 			);
 			return frameResponse('Success', `User updated successfully`);
 		} catch (e) {
-			logger.error(
-				`Error occurred in updateUser with message: ${e.message}`
-			);
+			logger.error(`Error occurred in updateUser with message: ${e.message}`);
 			return frameResponse('Error', e.message);
 		}
 	}
@@ -180,9 +148,7 @@ export class DatabaseService {
 			);
 			return frameResponse('Success', `User removed successfully`);
 		} catch (e) {
-			logger.error(
-				`Error occurred in removeUser with message: ${e.message}`
-			);
+			logger.error(`Error occurred in removeUser with message: ${e.message}`);
 			return frameResponse('Error', e.message);
 		}
 	}

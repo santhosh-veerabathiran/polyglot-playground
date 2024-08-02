@@ -30,17 +30,13 @@ export class DatabaseController {
 
 	@Post('users')
 	createUsers(@Body() users: TUsers[]) {
-		logger.log(
-			`createUsers called with data: ${JSON.stringify(users, null, 2)}`
-		);
+		logger.log(`createUsers called with data: ${JSON.stringify(users, null, 2)}`);
 		return this.databaseService.createUsers(users);
 	}
 
 	@Post('users/create')
 	createUser(@Body() user: TUsers) {
-		logger.log(
-			`createUsers called with data: ${JSON.stringify(user, null, 2)}`
-		);
+		logger.log(`createUsers called with data: ${JSON.stringify(user, null, 2)}`);
 		return this.databaseService.createUser(user);
 	}
 

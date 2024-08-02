@@ -1,11 +1,11 @@
 export function frameResponse(
-    status: 'Error' | 'Success',
-    message: string,
-    data?: any
+	status: 'Error' | 'Success',
+	message: string,
+	data?: any
 ) {
-    return {
-        status,
-        message,
-        data,
-    }
+	return {
+		status,
+		message,
+		data,
+	};
 }

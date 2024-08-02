@@ -16,11 +16,7 @@ export class TypeormService {
 		try {
 			const users = await this.usersRepository.find();
 			logger.log(`Users fetched successfully`);
-			return frameResponse(
-				'Success',
-				'Users fetched successfully',
-				users
-			);
+			return frameResponse('Success', 'Users fetched successfully', users);
 		} catch (e) {
 			logger.log(`Error occured in getUsers with message: ${e.message}`);
 			return frameResponse('Error', e.message);
@@ -57,15 +53,9 @@ export class TypeormService {
 			);
 			const savedUsers = await this.usersRepository.save(createdUsers);
 			logger.log('Users created successfully');
-			return frameResponse(
-				'Success',
-				'Users created successfully',
-				savedUsers
-			);
+			return frameResponse('Success', 'Users created successfully', savedUsers);
 		} catch (e) {
-			logger.log(
-				`Error occured in createUsers with message: ${e.message}`
-			);
+			logger.log(`Error occured in createUsers with message: ${e.message}`);
 			return frameResponse('Error', e.message);
 		}
 	}
@@ -79,15 +69,9 @@ export class TypeormService {
 			});
 			const savedUser = await this.usersRepository.save(createdUser);
 			logger.log('User created successfully');
-			return frameResponse(
-				'Success',
-				'User created successfully',
-				savedUser
-			);
+			return frameResponse('Success', 'User created successfully', savedUser);
 		} catch (e) {
-			logger.log(
-				`Error occured in createUser with message: ${e.message}`
-			);
+			logger.log(`Error occured in createUser with message: ${e.message}`);
 			return frameResponse('Error', e.message);
 		}
 	}

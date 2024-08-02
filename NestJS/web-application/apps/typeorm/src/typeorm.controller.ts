@@ -28,9 +28,7 @@ export class TypeormController {
 
 	@Post('users')
 	createUsers(@Body() users: TUsers[]) {
-		logger.log(
-			`createUsers called with data: ${JSON.stringify(users, null, 2)}`
-		);
+		logger.log(`createUsers called with data: ${JSON.stringify(users, null, 2)}`);
 		try {
 			return this.typeormService.createUsers(users);
 		} catch (e) {
@@ -40,9 +38,7 @@ export class TypeormController {
 
 	@Post('users/create')
 	createUser(@Body() user: TUsers) {
-		logger.log(
-			`createUser called with data: ${JSON.stringify(user, null, 2)}`
-		);
+		logger.log(`createUser called with data: ${JSON.stringify(user, null, 2)}`);
 		try {
 			return this.typeormService.createUser(user);
 		} catch (e) {

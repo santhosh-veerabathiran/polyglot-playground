@@ -3,8 +3,8 @@ import { DatabaseController } from './database.controller';
 import { DatabaseService } from './database.service';
 
 @Module({
-  imports: [],
-  controllers: [DatabaseController],
-  providers: [DatabaseService],
+	imports: [],
+	controllers: [DatabaseController],
+	providers: [DatabaseService],
 })
 export class DatabaseModule {}
