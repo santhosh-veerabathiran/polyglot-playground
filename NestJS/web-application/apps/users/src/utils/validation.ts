@@ -6,9 +6,9 @@ export function validateId(id: number): number {
 }
 
 function isValidEmail(email: string) {
-	const re =
+	const regex =
 		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	if (!re.test(String(email).toLowerCase())) throw new Error('invalid email');
+	if (!regex.test(String(email).toLowerCase())) throw new Error('invalid email');
 }
 
 export function validateUser(user: {

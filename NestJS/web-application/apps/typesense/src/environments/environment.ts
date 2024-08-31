@@ -27,7 +27,7 @@ export const mysqlConfig: DataSourceOptions = {
 	synchronize: false,
 } as const;
 
-export const postgreConfig: DataSourceOptions = {
+export const postgresConfig: DataSourceOptions = {
 	type: 'postgres',
 	host: process.env.POSTGRES_HOST,
 	port: parseInt(process.env.POSTGRES_PORT),
@@ -45,13 +45,15 @@ export const environment = {
 			return await dataSource.initialize();
 		},
 	},
-	postgreDatabaseConfig: {
+	postgresDatabaseConfig: {
 		provide: 'DATA_SOURCE',
 		useFactory: async () => {
-			const dataSource = new DataSource(postgreConfig);
+			const dataSource = new DataSource(postgresConfig);
 			return await dataSource.initialize();
 		},
 	},
 	appHost: process.env.APP_HOST,
 	appPort: parseInt(process.env.APP_PORT),
+	redisHost: process.env.REDIS_HOST,
+	redisPort: parseInt(process.env.REDIS_PORT),
 } as const;

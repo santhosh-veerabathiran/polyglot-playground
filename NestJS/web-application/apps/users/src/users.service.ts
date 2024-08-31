@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { frameResponse, logger, validateId, validateUser } from './utils';
 
 @Injectable()
-export class UserService {
+export class UsersService {
 	private users = [
 		{
 			id: 101,

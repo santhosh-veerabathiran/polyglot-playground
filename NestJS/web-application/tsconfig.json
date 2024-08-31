@@ -17,6 +17,11 @@
 		"strictBindCallApply": false,
 		"forceConsistentCasingInFileNames": false,
 		"noFallthroughCasesInSwitch": false,
-		"paths": {}
+		"paths": {
+			"@app/interfaces": ["libs/interfaces/src"],
+			"@app/interfaces/*": ["libs/interfaces/src/*"],
+			"@app/entities": ["libs/entities/src"],
+			"@app/entities/*": ["libs/entities/src/*"]
+		}
 	}
 }

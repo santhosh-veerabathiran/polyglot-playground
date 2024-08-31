@@ -3,9 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeormController } from './typeorm.controller';
 import { TypeormService } from './typeorm.service';
 import { Users } from './entities/Users';
-import { mysqlConfig } from './environments/environment';
+import { postgresConfig } from './environments/environment';
 
-const databaseConfig = postgreConfig;
+const databaseConfig = postgresConfig;
 @Module({
 	imports: [
 		TypeOrmModule.forRoot(databaseConfig),
