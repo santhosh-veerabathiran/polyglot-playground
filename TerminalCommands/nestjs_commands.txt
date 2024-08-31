@@ -15,3 +15,12 @@
 
 5. Start nest JS mono-repo project in development mode:
     nest start <app-name> --watch
+
+6. New workspace:
+    nest new <app-name>
+
+7. New monorepo app:
+    nest g app <app-name>
+
+8. New library
+    nest g lib <lib-name>
