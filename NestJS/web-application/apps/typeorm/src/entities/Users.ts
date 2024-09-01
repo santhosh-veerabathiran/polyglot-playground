@@ -1,25 +1,37 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+	Column,
+	CreateDateColumn,
+	Entity,
+	PrimaryColumn,
+	UpdateDateColumn,
+} from 'typeorm';
 
 @Entity({ name: 'users' })
 export class Users {
-	@PrimaryGeneratedColumn()
-	user_id: number;
+	@PrimaryColumn({ name: 'user_id' })
+	userId: number;
 
-	@Column()
-	fname: string;
-
-	@Column({ nullable: true })
-	lname: string;
-
-	@Column({ unique: true })
+	@PrimaryColumn()
 	email: string;
 
-	@Column({})
-	phone_no: string;
+	@Column({ name: 'first_name' })
+	firstName: string;
 
-	@Column()
-	created_at: Date;
+	@Column({ name: 'last_name', nullable: true })
+	lastName: string;
 
-	@Column()
-	updated_at: Date;
+	@Column({ name: 'phone_number' })
+	phoneNumber: string;
+
+	@CreateDateColumn({ name: 'created_at' })
+	createdAt: Date;
+
+	@UpdateDateColumn({ name: 'updated_at' })
+	updatedAt: Date;
+
+	@Column({ name: 'created_by', default: 'SYSTEM' })
+	createdBy: string;
+
+	@Column({ name: 'created_by', default: 'SYSTEM' })
+	updatedBy: string;
 }

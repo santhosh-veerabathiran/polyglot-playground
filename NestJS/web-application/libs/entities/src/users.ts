@@ -20,12 +20,18 @@ export class Users {
 	@Column({ name: 'last_name', nullable: true })
 	lastName: string;
 
-	@Column({ name: 'phone_no' })
-	phoneNo: string;
+	@Column({ name: 'phone_number' })
+	phoneNumber: string;
 
 	@CreateDateColumn({ name: 'created_at' })
 	createdAt: Date;
 
 	@UpdateDateColumn({ name: 'updated_at' })
 	updatedAt: Date;
+
+	@Column({ name: 'created_by', default: 'SYSTEM' })
+	createdBy: string;
+
+	@Column({ name: 'created_by', default: 'SYSTEM' })
+	updatedBy: string;
 }

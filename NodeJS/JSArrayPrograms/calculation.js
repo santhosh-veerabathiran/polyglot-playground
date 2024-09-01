@@ -16,7 +16,7 @@ function calculate(arr) {
             }
         }
     }
-    return -1
+    return -1;
 }
 
 console.log(calculate([[3,4,[3,2,2]],3,[5,2,2]]))
