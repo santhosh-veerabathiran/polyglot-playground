@@ -25,7 +25,7 @@ module.exports = {
 			'error',
 			{
 				printWidth: 80,
-				tabWidth: 1,
+				tabWidth: 4,
 				useTabs: true,
 				semi: true,
 				singleQuote: true,
