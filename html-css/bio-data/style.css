@@ -1,0 +1,60 @@
+* {
+    font-family:
+        Book Antiqua,
+        sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: cyan;
+}
+
+.biodata {
+    width: 50%;
+    background-color: white;
+    margin: 50px auto;
+    padding: 30px 50px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 2px gray;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.heading h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bio-input input,
+.bio-input textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px 0px 20px;
+    border-radius: 5px;
+    border: 1.5px solid silver;
+    outline: none;
+    font-size: 18px;
+}
+
+.bio-input textarea {
+    resize: none;
+    height: 120px;
+}
+
+.bio-input input[type='radio'],
+.bio-input input[type='checkbox'] {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.bio-btn button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: steelblue;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}

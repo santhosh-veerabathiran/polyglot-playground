@@ -1,0 +1,33 @@
+body {
+    background-color: floralwhite;
+    font-family: Book Antiqua;
+    font-size: large;
+    text-align: center;
+}
+
+.signin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aqua;
+    border: 2px solid tomato;
+    height: 300px;
+    width: 400px;
+    align-content: center;
+    margin: 0px auto;
+}
+
+.inputs input {
+    font-family:
+        Book Antiqua,
+        sans-serif;
+}
+
+.sub {
+    color: green;
+}
+
+.can {
+    color: red;
+}
