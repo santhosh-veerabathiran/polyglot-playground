@@ -1,0 +1,21 @@
+{
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "printWidth": 150,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "overrides": [
+        {
+            "files": "*.pug",
+            "options": {
+                "parser": "pug",
+                "singleQuote": false,
+                "pugPrintWidth": 150,
+                "pugSortAttributes": "as-is"
+            }
+        }
+    ]
+}
