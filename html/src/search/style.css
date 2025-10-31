@@ -1,0 +1,85 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #62a4f6;
+    color: #222222;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.content h1,
+.content p {
+    margin: 10px;
+}
+
+.search-box {
+    width: 600px;
+    background: #ffffff;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+input {
+    flex: 1;
+    height: 50px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #333333;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+button .fa {
+    width: 25px;
+    color: #555555;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #555555;
+}
+
+.result-box ul {
+    border-top: 1px solid #999;
+    padding: 15px 10px;
+    margin: 0;
+}
+
+.result-box ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 15px 10px;
+}
+
+.result-box ul li.list {
+    cursor: pointer;
+}
+
+.result-box ul li.list.active,
+.result-box ul li.list:hover {
+    background: #3b93ff;
+    color: #ffffff;
+}

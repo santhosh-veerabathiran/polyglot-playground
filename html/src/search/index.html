@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Auto Complete Search Bar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    </head>
+    <body>
+        <div class="content">
+            <h1>Auto Complete Search Bar</h1>
+        </div>
+        <div class="search-box">
+            <form autocomplete="off" action="">
+                <div class="search-input">
+                    <input type="text" id="input-box" name="query" placeholder="Search By Name" autocomplete="off" />
+                    <button type="submit" title="Search"><span class="fa fa-search"></span></button>
+                </div>
+            </form>
+            <div class="result-box"></div>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>

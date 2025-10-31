@@ -1,0 +1,43 @@
+* {
+    font-family:
+        Bookman Old Style,
+        sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    right: 20%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    border: 1px solid #3cd;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 18px;
+}
+
+input {
+    width: 100%;
+    margin: 20px 0px;
+    padding: 8px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type='button'] {
+    cursor: pointer;
+    background-color: lavender;
+}
+
+p {
+    text-align: center;
+}
