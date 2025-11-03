@@ -1,0 +1,26 @@
+{
+    "name": "fastify",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/fastify/src",
+    "projectType": "application",
+    "tags": [],
+    "targets": {
+        "serve": {
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "dependsOn": ["build"],
+            "options": {
+                "buildTarget": "fastify:build",
+                "runBuildTargetDependencies": false
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "fastify:build:development"
+                },
+                "production": {
+                    "buildTarget": "fastify:build:production"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "redis",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/redis/src",
+    "projectType": "application",
+    "tags": [],
+    "targets": {
+        "serve": {
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "dependsOn": ["build"],
+            "options": {
+                "buildTarget": "redis:build",
+                "runBuildTargetDependencies": false
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "redis:build:development"
+                },
+                "production": {
+                    "buildTarget": "redis:build:production"
+                }
+            }
+        }
+    }
+}
