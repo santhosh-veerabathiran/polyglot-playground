@@ -37,10 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <tr>
                                 <?php for ($j = 0; $j < 3; $j++): ?>
                                     <td>
-                                        <input type="text"
-                                            name="arow<?= $i + 1 ?>[]"
-                                            value="<?= $a ? htmlspecialchars($a[$i][$j]) : '' ?>"
-                                            required>
+                                        <input type="text" name="arow<?= $i + 1 ?>[]" value="<?= $a ? htmlspecialchars($a[$i][$j]) : '' ?>" required>
                                     </td>
                                 <?php endfor; ?>
                             </tr>
@@ -55,10 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <tr>
                                 <?php for ($j = 0; $j < 3; $j++): ?>
                                     <td>
-                                        <input type="text"
-                                            name="brow<?= $i + 1 ?>[]"
-                                            value="<?= $b ? htmlspecialchars($b[$i][$j]) : '' ?>"
-                                            required>
+                                        <input type="text" name="brow<?= $i + 1 ?>[]" value="<?= $b ? htmlspecialchars($b[$i][$j]) : '' ?>" required>
                                     </td>
                                 <?php endfor; ?>
                             </tr>
