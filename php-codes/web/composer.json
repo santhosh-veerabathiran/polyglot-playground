@@ -1,0 +1,30 @@
+{
+    "name": "santhosh/web",
+    "description": "PHP web project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Santhosh\\Web\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "SanthoshVeerabathiran",
+            "email": "santhosh20020923@gmail.com"
+        }
+    ],
+    "scripts": {
+        "format": "npx prettier --write \"**/*.{css,js}\" && vendor/bin/php-cs-fixer fix",
+        "format:check": "npx prettier --check \"**/*.{css,js}\" && vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix",
+        "cs-check": "php-cs-fixer fix --dry-run --diff"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0",
+        "friendsofphp/php-cs-fixer": "^3.89"
+    },
+    "require": {
+        "php": "^8.4",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

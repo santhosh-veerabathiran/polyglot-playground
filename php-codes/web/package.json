@@ -1,0 +1,20 @@
+{
+    "name": "web",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier --write --plugin=@prettier/plugin-php \"**/*.{php,html,css,js}\" && composer cs-fix",
+        "format:check": "prettier --check --plugin=@prettier/plugin-php \"**/*.{php,html,css,js}\" && composer cs-check",
+        "cs-fix": "php-cs-fixer fix",
+        "cs-check": "php-cs-fixer fix --dry-run --diff"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@prettier/plugin-php": "^0.20.0",
+        "prettier": "^3.6.2",
+        "prettier-plugin-twig-melody": "^0.4.6"
+    }
+}

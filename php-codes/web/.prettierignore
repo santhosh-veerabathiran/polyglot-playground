@@ -1,0 +1,6 @@
+/vendor/
+/node_modules/
+/uploads/
+*.min.css
+*.min.js
+.php-cs-fixer.php
