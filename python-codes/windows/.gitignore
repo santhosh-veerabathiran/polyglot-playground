@@ -1,0 +1,5 @@
+console.egg-info
+.env
+__pycache__
+venv
+abc.txt

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Python Flask Form Submission</title>
+        <style>
+            * {
+                font-family: Helvetica, sans-serif;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            form {
+                margin: auto;
+                margin-top: 50px;
+                width: 500px;
+                padding: 20px 30px;
+                border: 1.5px solid lightblue;
+                border-radius: 5px;
+            }
+
+            label {
+                padding: 10px;
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                box-sizing: border-box;
+                border: 1px solid #f7d1d1;
+                border-radius: 3px;
+                margin: 10px 0px;
+                outline: none;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #d9effa;
+                border-radius: 3px;
+                margin: 10px 0px;
+                outline: none;
+                cursor: pointer;
+            }
+
+            p {
+                text-align: center;
+                font-size: 30px;
+            }
+
+            p a {
+                text-decoration: none;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Python Flask Form Submission</h1>
+
+        <form action="/home" method="POST">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" placeholder="Your First Name" />
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" placeholder="Your Last Name" />
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Your Email" required />
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if first_name, last_name, email %}
+        <p>
+            <a href="/next/{{first_name + ' ' + last_name}}">Next Page</a><br /><br />
+            Hello <b>{{first_name}}</b> <b>{{last_name}}</b><br />
+            Your email ID is <b>{{email}}</b>
+        </p>
+        {% endif %}
+    </body>
+</html>

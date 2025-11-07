@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-CA-Compatible" content="IE-edge" />
+        <meta name="viewport" content="width=device-width,intial_scale=1.0" />
+        <title>Student Table</title>
+        <style>
+            body {
+                background-color: floralwhite;
+                font-family: Book Antiqua;
+                font-size: larger;
+                text-align: center;
+            }
+
+            .student_form {
+                display: block;
+                background-color: aqua;
+                border: 1.5px solid royalblue;
+                border-radius: 5px;
+                width: 400px;
+                height: 200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .student_data {
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="title">
+            <h1>Student Table</h1>
+        </div>
+        <div class="student_form">
+            <form action="">
+                <div class="student_data">
+                    <label>ID:</label>
+                    <input type="text" id="student_id" name="student_id" value="{{student_id}}" />
+                </div>
+                <div class="student_data">
+                    <label>Name:</label>
+                    <input type="text" id="student_name" name="student_name" value="{{student_name}}" />
+                </div>
+                <div class="student_data">
+                    <label>Gender:</label>
+                    <label for="male">
+                        <input type="radio" id="male" name="student_gender" , value="male" {% if student_gender !="female" %}checked{% endif %} />Male
+                    </label>
+                    <label for="female">
+                        <input type="radio" id="female" name="student_gender" , value="female" {% if student_gender == 'female' %}checked{% endif %}
+                        />Female
+                    </label>
+                </div>
+                <div class="student_data">
+                    <label>Age:</label>
+                    <input type="text" id="student_age" name="student_age" value="{{student_age}}" />
+                </div>
+                <div class="student_data">
+                    <button type="submit" formaction="/insert" formmethod="POST">Insert</button>
+                    <button type="submit" formaction="/update" formmethod="POST">Update</button>
+                    <button type="submit" formaction="/delete" formmethod="POST">Delete</button>
+                    <button type="submit" formaction="/select" formmethod="GET">Select</button>
+                </div>
+            </form>
+        </div>
+        {% if message %}
+        <div class="student_operation_result">
+            <p>{{message}}</p>
+        </div>
+        {% endif %}
+    </body>
+</html>
