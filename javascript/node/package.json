@@ -1,0 +1,11 @@
+{
+    "name": "node",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@types/node": "^24.10.0"
+    }
+}
