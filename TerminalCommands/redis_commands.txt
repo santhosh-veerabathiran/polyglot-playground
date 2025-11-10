@@ -1,5 +1,0 @@
-1. run redis:
-    docker run --name my-redis -d redis
-
-2. interact with redis container's cli:
-    docker run --name my-redis -d redis
