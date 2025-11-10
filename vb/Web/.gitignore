@@ -1,0 +1,48 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+*.pdb
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+*.dbmdl
+*.jfm
+
+# VS 2015
+.vs/
+*.suo
+*.user
+*.sln.docstates
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+x64/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Package files
+packages/
+*.nupkg
+
+# SQL Server files
+App_Data/*.mdf
+App_Data/*.ldf

@@ -1,0 +1,20 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# MSTest test results
+TestResults/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
